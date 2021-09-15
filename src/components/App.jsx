@@ -4,6 +4,7 @@ import { Route, Switch, Redirect, Link } from 'react-router-dom';
 import LoginPage from './Login/LoginPage';
 import NavigationBar from './Navbar/NavigationBar';
 import RegisterForm from './Register/RegisterForm';
+import Search from './Search/Search';
 
 class App extends Component {
     constructor(props) {
@@ -38,7 +39,9 @@ class App extends Component {
                     <Switch>
                         <Route path='/login' component={LoginPage} />
                         <Route path='/register' component={RegisterForm} />
+                        <Route path='/search' component={Search} />
                     </Switch>
+                    
                 </div>
                 
             </div>

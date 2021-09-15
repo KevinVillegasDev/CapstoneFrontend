@@ -20,6 +20,9 @@ const NavigationBar = ({user}) => {
             {user && 
                 <React.Fragment>
                     <dd class="nav-item">
+                        <Link to="/search" class="nav-link active">Search</Link>
+                    </dd>
+                    <dd class="nav-item">
                             <Logout />
                     </dd>
                 </React.Fragment>
