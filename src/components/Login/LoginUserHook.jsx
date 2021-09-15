@@ -16,6 +16,7 @@ const LoginUser = (username, password) => {
             //store token in browser
             localStorage.setItem('token', response.data.token);
             console.log("good login");
+            console.log(localStorage)
             console.log(response.data.token);
             window.location = '/';
             return localStorage;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logout from '../Logout/Logout';
 
 
 const NavigationBar = ({user}) => {
@@ -15,6 +16,13 @@ const NavigationBar = ({user}) => {
                         <Link to="/register" class="nav-link active">Register</Link>
                     </dd>
                 </React.Fragment>            
+            }
+            {user && 
+                <React.Fragment>
+                    <dd class="nav-item">
+                            <Logout />
+                    </dd>
+                </React.Fragment>
             }
             </dl>
         </div>
