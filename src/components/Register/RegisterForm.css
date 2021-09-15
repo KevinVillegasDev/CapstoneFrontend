@@ -1,0 +1,10 @@
+.p {
+    font-size: 20px;
+}
+
+.newUserButton {
+    background-color: #ff9900;
+    color: black;
+    border-radius: 5px;
+    margin-left: 5px;
+}

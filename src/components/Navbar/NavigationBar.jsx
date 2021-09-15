@@ -11,6 +11,9 @@ const NavigationBar = ({user}) => {
                     <dd class="nav-item">
                         <Link to="/login" class="nav-link active">Login</Link>
                     </dd>
+                    <dd class="nav-item">
+                        <Link to="/register" class="nav-link active">Register</Link>
+                    </dd>
                 </React.Fragment>            
             }
             </dl>
