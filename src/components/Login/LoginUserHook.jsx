@@ -11,18 +11,18 @@ const LoginUser = (username, password) => {
 
     //login user by passing in credentials
     async function makeLoginRequest(userCredentials) {
-        let response = await axios.post('http://127.0.0.1:8000/api/auth/login/', userCredentials);
-        if(response){
-            //store token in browser
-            localStorage.setItem('token', response.data.token);
+        try{
+            let response = await axios.post('http://127.0.0.1:8000/api/auth/login/', userCredentials);
+            localStorage.setItem('token', response.data.access);
             console.log("good login");
             console.log(localStorage)
-            console.log(response.data.token);
+            console.log(response.data.access);
             window.location = '/';
-            return localStorage;
-        } else {
-            console.log("bad api call");
         }
+        catch(err){
+            console.log(err)
+        }
+
     }
     //starts posting user info as soon as hook is called
     makeLoginRequest(userCredentials)

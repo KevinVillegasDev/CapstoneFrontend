@@ -34,7 +34,7 @@ class App extends Component {
         return ( 
             <div>
                 <NavigationBar user={user} />
-                <div>
+                <div>                   
                     <Switch>
                         <Route path='/login' component={LoginPage} />
                         <Route path='/register' component={RegisterForm} />
