@@ -1,5 +1,7 @@
 import React from 'react';
 import {useForm} from './UseForm'
+import {Button} from 'react-bootstrap'
+
 
 
 const Search = (props) => {
@@ -10,7 +12,8 @@ const Search = (props) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <input name="search" value={values.search} onChange={handleChange} />
-                <button type="submit" value="Submit" placeholder="Recipe Search">Search</button>
+                <Button type="submit" variant="secondary">Search</Button>{' '}
+                
             </form>
         </div>
      );

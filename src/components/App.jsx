@@ -4,13 +4,13 @@ import { Route, Switch, Redirect, Link } from 'react-router-dom';
 import LoginPage from './Login/LoginPage';
 import NavigationBar from './Navbar/NavigationBar';
 import RegisterForm from './Register/RegisterForm';
-import Search from './Search/Search';
+import MakeSearch from './Search/MakeSearch';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-
+            searchTerm: ''
          }
     }
 
@@ -32,6 +32,12 @@ class App extends Component {
     
     render() { 
         const user = this.state.user
+        const handleChange = (event) => {
+            this.setState({
+                searchTerm: event.target.value
+            });
+        }
+
         return ( 
             <div>
                 <NavigationBar user={user} />
@@ -39,7 +45,7 @@ class App extends Component {
                     <Switch>
                         <Route path='/login' component={LoginPage} />
                         <Route path='/register' component={RegisterForm} />
-                        <Route path='/search' component={Search} />
+                        <Route path='/search' component={MakeSearch} />
                     </Switch>
                     
                 </div>
