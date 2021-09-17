@@ -6,6 +6,7 @@ import NavigationBar from './Navbar/NavigationBar';
 import RegisterForm from './Register/RegisterForm';
 import MakeSearch from './Search/MakeSearch';
 import Profile from './Profile/Profile';
+import RecipeGenerator from './RecipeGenerator/RecipeGenerator';
 
 class App extends Component {
     constructor(props) {
@@ -56,6 +57,7 @@ class App extends Component {
                         <Route path='/login' component={LoginPage} />
                         <Route path='/register' component={RegisterForm} />
                         <Route path='/search' component={MakeSearch} />
+                        <Route path='/generaterecipe' component={RecipeGenerator} />
                     </Switch>
                     
                 </div>

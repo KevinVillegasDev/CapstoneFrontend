@@ -26,6 +26,9 @@ const NavigationBar = ({user}) => {
                         <Link to="/search" class="nav-link active">Search</Link>
                     </dd>
                     <dd class="nav-item">
+                        <Link to="/generaterecipe" class="nav-link active">Recipe Generator</Link>
+                    </dd>
+                    <dd class="nav-item">
                             <Logout />
                     </dd>
                 </React.Fragment>
