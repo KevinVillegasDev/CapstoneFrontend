@@ -8,6 +8,7 @@ import RecipePrinter from './RecipePrinter'
 const MakeSearch = () => {
     const [searchResults, setSearchResults] = useState([])
     const [recipeInstructions, setRecipeInstructions] = useState('')
+    const [likedRecipe, setLikedRecipe] = useState([])
 
     
     useEffect(() => {
@@ -38,13 +39,38 @@ const MakeSearch = () => {
         }
     }
 
-    
+    const likeRecipe = async(likedRecipe) => {
+        let newRecipe ={
+            name: '',
+            instructions: ''             
+            
+        }
+        try {
+            let response = await axios.post(`http://127.0.0.1:8000/recipes`, newRecipe)
+            console.log(response.data)
+        }
+        catch(ex) {
+            
+        }
+        let savedRecipe ={
+            name: '',
+            recipeId: ''
+        }
+        try{
+            let response = await axios.post(`http://127.0.0.1:8000/likedrecipes`, savedRecipe)
+            console.log(response.data)
+        }
+        catch(ex){
+
+        }
+
+    }
     
     return ( 
         <div>
             <SearchBar makeSearch = {makeGetRequest} />
             <RecipePrinter showRecipeInstructions={recipeInstructions} />
-            <DisplaySearch displaySearch = {searchResults} getRecipeInstructions={getRecipeInstructions}  />
+            <DisplaySearch displaySearch = {searchResults} getRecipeInstructions={getRecipeInstructions} likeRecipe={likeRecipe}  />
         </div>
      );
 }

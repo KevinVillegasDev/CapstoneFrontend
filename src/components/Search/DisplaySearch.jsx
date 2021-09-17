@@ -9,6 +9,10 @@ const DisplaySearch = (props) => {
         props.getRecipeInstructions(id)
     }
 
+    const handleLikedRecipeClick = (likeInfo) => {
+        props.likeRecipe(likeInfo)
+    }
+
 
     return ( 
         <ListGroup horizontal>
@@ -19,6 +23,7 @@ const DisplaySearch = (props) => {
                 return (<div key={index} className="p-2 bd-highlight"> Recipe: {recipe.title} <br></br>
                         <img src={recipe.image} alt="img"
                         onClick ={() => handleClick(recipe.id)} />
+                        <button type="button" onClick ={() => handleLikedRecipeClick(recipe)}>Favorite!</button>
                             
                         </div>
             )})}

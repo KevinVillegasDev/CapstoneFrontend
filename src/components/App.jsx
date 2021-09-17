@@ -5,6 +5,7 @@ import LoginPage from './Login/LoginPage';
 import NavigationBar from './Navbar/NavigationBar';
 import RegisterForm from './Register/RegisterForm';
 import MakeSearch from './Search/MakeSearch';
+import Profile from './Profile/Profile';
 
 class App extends Component {
     constructor(props) {
@@ -43,6 +44,15 @@ class App extends Component {
                 <NavigationBar user={user} />
                 <div>                   
                     <Switch>
+                        <Route path='/profile' render={props => {
+                            if(!user){
+                                return <Redirect to="/login" />;
+                            } else {
+                                return <Profile {...props} user={user} />
+                            }
+                                
+                        }}
+                        />
                         <Route path='/login' component={LoginPage} />
                         <Route path='/register' component={RegisterForm} />
                         <Route path='/search' component={MakeSearch} />
