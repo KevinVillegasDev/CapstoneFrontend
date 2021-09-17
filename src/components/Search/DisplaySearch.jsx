@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 
@@ -33,5 +33,3 @@ export default DisplaySearch;
 
 
 
-/* <img src={video.snippet.thumbnails.default.url} alt="img"
-    onClick ={() => handleClick(video.id.videoId)} /> </div>) */

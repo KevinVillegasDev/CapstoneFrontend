@@ -12,10 +12,10 @@ const RecipePrinter = (props) => {
                 return( 
                     <li key={index}> {steps.number} {steps.step} 
                         <ul>
-                            {steps.ingredients.map((ingredient, index) => <li key={index} >{ingredient.name}</li>)}
+                            {steps.ingredients.map((ingredient, index) => <li key={index}>Ingredients: {ingredient.name}</li>)}
                         </ul>
                         <ul>
-                            {steps.equipment.map((piece, index) => <li key={index} >{piece.name}</li>)}
+                            {steps.equipment.map((piece, index) => <li key={index} > Equipment: {piece.name}</li>)}
                         </ul>  
                     </li>)   
               }): <h2>No Recipes Yet!</h2>}
