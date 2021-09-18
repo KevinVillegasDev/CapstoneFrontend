@@ -1,6 +1,6 @@
 import jwtDecode from 'jwt-decode';
 import React, {Component} from 'react';
-import { Route, Switch, Redirect, Link } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import LoginPage from './Login/LoginPage';
 import NavigationBar from './Navbar/NavigationBar';
 import RegisterForm from './Register/RegisterForm';
@@ -34,12 +34,7 @@ class App extends Component {
     
     render() { 
         const user = this.state.user
-        const handleChange = (event) => {
-            this.setState({
-                searchTerm: event.target.value
-            });
-        }
-
+        
         return ( 
             <div>
                 <NavigationBar user={user} />

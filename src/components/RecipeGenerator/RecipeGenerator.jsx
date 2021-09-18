@@ -30,8 +30,11 @@ const RecipeGenerator = () => {
                 {generateRecipe.map((recipe, index) => {
                     return (
                         <div key={index} className="p-2 bd-highlight"> Recipe: {recipe.title} <br></br>
-                        <img src={recipe.image} alt="img" />
-                        <button type="button" onClick ={() => handleClick(recipe)}>Generate!</button>
+                        Total Cook Time: {recipe.readyInMinutes} <br></br>
+                        Servings: {recipe.servings} <br></br>
+                        Steps: {recipe.instructions} <br></br>
+                        <img src={recipe.image} alt="img" /> <br></br>
+                        <button type="button" onClick ={() => handleClick(recipe)}>New Recipe!</button>
                     </div>
                        
                 )})}

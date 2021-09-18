@@ -8,7 +8,7 @@ import RecipePrinter from './RecipePrinter'
 const MakeSearch = () => {
     const [searchResults, setSearchResults] = useState([])
     const [recipeInstructions, setRecipeInstructions] = useState('')
-    const [likedRecipe, setLikedRecipe] = useState([])
+    
 
     
     useEffect(() => {
