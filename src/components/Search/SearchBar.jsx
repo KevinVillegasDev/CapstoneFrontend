@@ -1,22 +1,24 @@
-import React from 'react';
-import {useForm} from './UseForm'
-import {Button} from 'react-bootstrap'
-
-
+import React from "react";
+import { useForm } from "./UseForm";
+import { Button } from "react-bootstrap";
 
 const Search = (props) => {
+    const { values, handleChange, handleSubmit } = useForm(props.makeSearch);
 
-    const {values, handleChange, handleSubmit} = useForm(props.makeSearch)
-
-    return ( 
+    return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input name="search" value={values.search} onChange={handleChange} />
-                <Button type="submit" variant="secondary">Search</Button>{' '}
-                
+                <input
+                    name="search"
+                    value={values.search}
+                    onChange={handleChange}
+                />
+                <Button type="submit" variant="secondary">
+                    Search
+                </Button>{" "}
             </form>
         </div>
-     );
-}
- 
+    );
+};
+
 export default Search;
