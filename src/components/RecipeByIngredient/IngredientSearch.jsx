@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import useForm from "./UseForm";
 import { Button } from "react-bootstrap";
 import axios from "axios";
+import { ListGroup, ListGroupItem } from "react-bootstrap";
 
 const IngredientSearch = () => {
-    const { values, handleChange, handleSubmit } = useForm();
+    const { values, handleChange, handleSubmit } = useForm(
+        makeIngredientRequest
+    );
+    const [ingredientRecipes, setIngredientRecipes] = useState([]);
 
-    const makeIngredientRequest = async () => {
+    useEffect(() => {
+        makeIngredientRequest();
+    }, []);
+
+    async function makeIngredientRequest() {
+        let url = `https://api.spoonacular.com/recipes/findByIngredients?number=3&apiKey=d299386456af4cce8794dafca7cc4f14&ingredients=${values.ingredientOne},+${values.ingredientTwo},+${values.ingredientThree},+${values.ingredientFour},+${values.ingredientFive}`;
+
         try {
-            let response = await axios.get(
-                `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${values}&number=2`
-            );
+            let response = await axios.get(url);
             console.log(response.data);
+            setIngredientRecipes(response.data);
         } catch (ex) {}
-    };
+    }
 
     const handleClick = () => {
         makeIngredientRequest();
@@ -61,6 +70,19 @@ const IngredientSearch = () => {
                     Search for Recipes!
                 </Button>{" "}
             </form>
+            <ListGroup horizontal>
+                <ListGroupItem>
+                    {ingredientRecipes.map((recipe, index) => {
+                        return (
+                            <div key={index} className="p-2 bd-highlight">
+                                {" "}
+                                Recipe: {recipe.title} <br></br>
+                                <img src={recipe.image} alt="img" /> <br></br>
+                            </div>
+                        );
+                    })}
+                </ListGroupItem>
+            </ListGroup>
         </div>
     );
 };

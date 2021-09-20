@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const useForm = (callback) => {
-    const [values, setValues] = useState({});
+    const [values, setValues] = useState([]);
 
     const handleChange = (event) => {
         event.persist();
@@ -11,7 +11,7 @@ export const useForm = (callback) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        callback(values);
+        callback();
     };
 
     return { values, handleChange, handleSubmit };
