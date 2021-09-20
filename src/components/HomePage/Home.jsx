@@ -1,6 +1,6 @@
 const Home = (user) => {
     return (
-        <div>
+        <div id="pages">
             <h1>Welcome to Recipes Galore. Use the NavBar to get started!</h1>
             <img
                 id="img"

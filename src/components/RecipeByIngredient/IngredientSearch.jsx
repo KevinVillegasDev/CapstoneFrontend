@@ -92,7 +92,12 @@ const IngredientSearch = () => {
                             <div key={index} id="pages">
                                 {" "}
                                 Recipe: {recipe.title} <br></br>
-                                <img src={recipe.image} alt="img" /> <br></br>
+                                <img
+                                    src={recipe.image}
+                                    alt="img"
+                                    id="imagesize"
+                                />{" "}
+                                <br></br>
                             </div>
                         );
                     })}

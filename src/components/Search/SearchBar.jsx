@@ -16,9 +16,10 @@ const Search = (props) => {
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Button type="submit" variant="primary">
+                <Button type="submit" className="mb-3" variant="primary">
                     Search
                 </Button>{" "}
+                <br />
             </Form>
         </div>
     );

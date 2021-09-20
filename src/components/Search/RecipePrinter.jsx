@@ -2,7 +2,7 @@ import React from "react";
 
 const RecipePrinter = (props) => {
     return (
-        <ul>
+        <ul id="boxborder">
             {props.showRecipeInstructions ? (
                 props.showRecipeInstructions.map((steps, index) => {
                     return (

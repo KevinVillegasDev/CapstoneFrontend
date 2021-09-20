@@ -20,6 +20,7 @@ const DisplaySearch = (props) => {
                             {" "}
                             Recipe: {recipe.title} <br></br>
                             <img
+                                id="imagesize"
                                 src={recipe.image}
                                 alt="img"
                                 onClick={() => handleClick(recipe.id)}
