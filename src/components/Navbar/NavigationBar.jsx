@@ -4,7 +4,11 @@ import Logout from "../Logout/Logout";
 
 const NavigationBar = ({ user }) => {
     return (
-        <div class="p-2">
+        <div id="navbar">
+            <a href="/" id="homelink" class="nav-link">
+                {" "}
+                Recipe's Galore
+            </a>
             <dl class="nav nav-tabs">
                 {!user && (
                     <React.Fragment>

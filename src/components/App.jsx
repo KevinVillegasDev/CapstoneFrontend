@@ -8,6 +8,7 @@ import MakeSearch from "./Search/MakeSearch";
 import Profile from "./Profile/Profile";
 import RecipeGenerator from "./RecipeGenerator/RecipeGenerator";
 import IngredientSearch from "./RecipeByIngredient/IngredientSearch";
+import Home from "./HomePage/Home";
 
 class App extends Component {
     constructor(props) {
@@ -46,6 +47,7 @@ class App extends Component {
                                 }
                             }}
                         />
+                        <Route exact path="/" component={Home} />
                         <Route path="/login" component={LoginPage} />
                         <Route path="/register" component={RegisterForm} />
                         <Route path="/search" component={MakeSearch} />

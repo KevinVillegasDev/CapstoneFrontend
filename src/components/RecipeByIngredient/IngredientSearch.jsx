@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import useForm from "./UseForm";
 import { Button } from "react-bootstrap";
 import axios from "axios";
-import { ListGroup, ListGroupItem } from "react-bootstrap";
+import { ListGroup, ListGroupItem, Form } from "react-bootstrap";
 
 const IngredientSearch = () => {
     const { values, handleChange, handleSubmit } = useForm(
@@ -30,51 +30,65 @@ const IngredientSearch = () => {
 
     return (
         <div>
-            <h3>Enter your pantry/fridge ingredients here!</h3>
-            <form onSubmit={handleSubmit}>
-                <input
-                    name="ingredientOne"
-                    value={values.ingredientOne}
-                    placeholder="Ingredient One"
-                    onChange={handleChange}
-                />{" "}
-                <input
-                    name="ingredientTwo"
-                    value={values.ingredientTwo}
-                    placeholder="Ingredient Two"
-                    onChange={handleChange}
-                />{" "}
-                <input
-                    name="ingredientThree"
-                    value={values.ingredientThree}
-                    placeholder="Ingredient Three"
-                    onChange={handleChange}
-                />{" "}
-                <input
-                    name="ingredientFour"
-                    value={values.ingredientFour}
-                    placeholder="Ingredient Four"
-                    onChange={handleChange}
-                />{" "}
-                <input
-                    name="ingredientFive"
-                    value={values.ingredientFive}
-                    placeholder="Ingredient Five"
-                    onChange={handleChange}
-                />{" "}
+            <h3>
+                Enter your pantry/fridge ingredients here and quickly find{" "}
+                <br></br>
+                recipes you can create with those ingredients.
+            </h3>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3">
+                    <input
+                        name="ingredientOne"
+                        value={values.ingredientOne}
+                        placeholder="Ingredient One"
+                        onChange={handleChange}
+                    />
+                </Form.Group>{" "}
+                <Form.Group className="mb-3">
+                    <input
+                        name="ingredientTwo"
+                        value={values.ingredientTwo}
+                        placeholder="Ingredient Two"
+                        onChange={handleChange}
+                    />
+                </Form.Group>{" "}
+                <Form.Group className="mb-3">
+                    <input
+                        name="ingredientThree"
+                        value={values.ingredientThree}
+                        placeholder="Ingredient Three"
+                        onChange={handleChange}
+                    />
+                </Form.Group>{" "}
+                <Form.Group className="mb-3">
+                    <input
+                        name="ingredientFour"
+                        value={values.ingredientFour}
+                        placeholder="Ingredient Four"
+                        onChange={handleChange}
+                    />{" "}
+                </Form.Group>{" "}
+                <Form.Group className="mb-3">
+                    <input
+                        name="ingredientFive"
+                        value={values.ingredientFive}
+                        placeholder="Ingredient Five"
+                        onChange={handleChange}
+                    />
+                </Form.Group>{" "}
                 <Button
                     type="submit"
-                    variant="secondary"
+                    variant="primary"
                     onClick={() => handleClick()}
                 >
                     Search for Recipes!
                 </Button>{" "}
-            </form>
+            </Form>
             <ListGroup horizontal>
                 <ListGroupItem>
                     {ingredientRecipes.map((recipe, index) => {
                         return (
-                            <div key={index} className="p-2 bd-highlight">
+                            <div key={index} id="pages">
                                 {" "}
                                 Recipe: {recipe.title} <br></br>
                                 <img src={recipe.image} alt="img" /> <br></br>

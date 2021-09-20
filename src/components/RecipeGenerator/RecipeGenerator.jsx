@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { ListGroup, ListGroupItem } from "react-bootstrap";
+import { ListGroup, ListGroupItem, Button } from "react-bootstrap";
 
 const RecipeGenerator = () => {
     const [generateRecipe, setGenerateRecipe] = useState([]);
@@ -28,19 +28,19 @@ const RecipeGenerator = () => {
             <ListGroupItem>
                 {generateRecipe.map((recipe, index) => {
                     return (
-                        <div key={index} className="p-2 bd-highlight">
+                        <div key={index} id="pages">
                             {" "}
                             Recipe: {recipe.title} <br></br>
                             Total Cook Time: {recipe.readyInMinutes} <br></br>
                             Servings: {recipe.servings} <br></br>
                             Instructions: {recipe.instructions} <br></br>
                             <img src={recipe.image} alt="img" /> <br></br>
-                            <button
+                            <Button
                                 type="button"
                                 onClick={() => handleClick(recipe)}
                             >
                                 New Recipe!
-                            </button>
+                            </Button>
                         </div>
                     );
                 })}

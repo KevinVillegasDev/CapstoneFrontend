@@ -1,0 +1,17 @@
+#pages {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 30px;
+    margin-bottom: 5%;
+    color: rgb(44, 42, 151);
+}
+
+#homelink {
+    text-decoration: none;
+    color: rgb(233, 233, 238);
+    font-size: 28px;
+}
+
+#navbar {
+    background-color: cornflowerblue;
+}

@@ -62,7 +62,7 @@ const MakeSearch = () => {
     };
 
     return (
-        <div>
+        <div id="pages">
             <SearchBar makeSearch={makeGetRequest} />
             <RecipePrinter showRecipeInstructions={recipeInstructions} />
             <DisplaySearch

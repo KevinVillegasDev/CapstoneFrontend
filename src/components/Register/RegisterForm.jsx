@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import "./RegisterForm.css";
+import { Form } from "react-bootstrap";
 
 class RegisterForm extends Component {
     constructor(props) {
@@ -56,52 +57,59 @@ class RegisterForm extends Component {
         const password = this.state.password;
         const email = this.state.email;
         return (
-            <div class="RegisterForm">
+            <div>
                 <h3>Register for an account here!</h3>
-                <form onSubmit={(event) => this.handleSubmit(event)}>
-                    <input
-                        class="m-2"
-                        name="first_name"
-                        type="text"
-                        placeholder="First Name"
-                        value={first_name}
-                        onChange={this.handleChange}
-                    />
-                    <input
-                        class="m-2"
-                        name="last_name"
-                        type="text"
-                        placeholder="Last Name"
-                        value={last_name}
-                        onChange={this.handleChange}
-                    />
-                    <br />
-                    <input
-                        class="m-2"
-                        name="username"
-                        type="text"
-                        placeholder="Username"
-                        value={username}
-                        onChange={this.handleChange}
-                    />
-                    <input
-                        class="m-2"
-                        name="password"
-                        type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={this.handleChange}
-                    />
-                    <br />
-                    <input
-                        class="m-2"
-                        name="email"
-                        type="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={this.handleChange}
-                    />
-                    <br />
+                <Form onSubmit={(event) => this.handleSubmit(event)}>
+                    <Form.Group className="mb-3">
+                        <input
+                            class="m-2"
+                            name="first_name"
+                            type="text"
+                            placeholder="First Name"
+                            value={first_name}
+                            onChange={this.handleChange}
+                        />
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <input
+                            class="m-2"
+                            name="last_name"
+                            type="text"
+                            placeholder="Last Name"
+                            value={last_name}
+                            onChange={this.handleChange}
+                        />
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <input
+                            class="m-2"
+                            name="username"
+                            type="text"
+                            placeholder="Username"
+                            value={username}
+                            onChange={this.handleChange}
+                        />
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <input
+                            class="m-2"
+                            name="password"
+                            type="password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={this.handleChange}
+                        />
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <input
+                            class="m-2"
+                            name="email"
+                            type="email"
+                            placeholder="Email"
+                            value={email}
+                            onChange={this.handleChange}
+                        />
+                    </Form.Group>
                     <input
                         id="newUserButton"
                         name="submit"
@@ -109,7 +117,7 @@ class RegisterForm extends Component {
                         value="Complete Registration"
                         className="btn btn-secondary m-2"
                     />
-                </form>
+                </Form>
             </div>
         );
     }

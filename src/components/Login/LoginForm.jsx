@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import LoginUser from "./LoginUserHook";
+import { Form, Button } from "react-bootstrap";
 
 const LoginForm = ({ loginUser }) => {
     //form variables
@@ -22,23 +23,27 @@ const LoginForm = ({ loginUser }) => {
     //login form
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="username"
-                    placeholder="Username"
-                    value={username}
-                    onChange={(event) => setUserName(event.target.value)}
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(event) => setPassword(event.target.value)}
-                />
+            <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="formBasicUsername">
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Username"
+                        value={username}
+                        onChange={(event) => setUserName(event.target.value)}
+                    />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                    />
+                </Form.Group>
                 <input type="submit" value="Login" class="btn btn-primary" />
-            </form>
+            </Form>
         </div>
     );
 };
