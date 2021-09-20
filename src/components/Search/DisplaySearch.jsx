@@ -1,5 +1,5 @@
 import React from "react";
-import { ListGroup, ListGroupItem } from "react-bootstrap";
+import { ListGroup, ListGroupItem, Button } from "react-bootstrap";
 
 const DisplaySearch = (props) => {
     const handleClick = (id) => {
@@ -11,12 +11,12 @@ const DisplaySearch = (props) => {
     };
 
     return (
-        <ListGroup horizontal>
+        <ListGroup horizontal id="boxborder">
             <ListGroupItem>
                 {console.log(props.displaySearch)}
                 {props.displaySearch.map((recipe, index) => {
                     return (
-                        <div key={index} className="p-2 bd-highlight">
+                        <div key={index}>
                             {" "}
                             Recipe: {recipe.title} <br></br>
                             <img
@@ -24,12 +24,13 @@ const DisplaySearch = (props) => {
                                 alt="img"
                                 onClick={() => handleClick(recipe.id)}
                             />
-                            <button
+                            <Button
                                 type="button"
+                                variant="primary"
                                 onClick={() => handleLikedRecipeClick(recipe)}
                             >
                                 Favorite!
-                            </button>
+                            </Button>
                         </div>
                     );
                 })}

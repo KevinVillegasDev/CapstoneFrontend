@@ -84,7 +84,8 @@ const IngredientSearch = () => {
                     Search for Recipes!
                 </Button>{" "}
             </Form>
-            <ListGroup horizontal>
+            <br></br>
+            <ListGroup horizontal id="boxborder">
                 <ListGroupItem>
                     {ingredientRecipes.map((recipe, index) => {
                         return (

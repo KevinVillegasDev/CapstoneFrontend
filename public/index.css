@@ -3,7 +3,7 @@
     padding-right: 10%;
     padding-top: 30px;
     margin-bottom: 5%;
-    color: rgb(44, 42, 151);
+    color: rgb(12, 12, 12);
 }
 
 #homelink {
@@ -14,4 +14,17 @@
 
 #navbar {
     background-color: cornflowerblue;
+}
+
+#img {
+    object-fit: cover;
+}
+
+#boxborder {
+    border: solid 10px;
+}
+
+#ingredientDisplayWidth {
+    width: 40%;
+    height: auto;
 }

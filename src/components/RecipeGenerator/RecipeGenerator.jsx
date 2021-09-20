@@ -25,7 +25,7 @@ const RecipeGenerator = () => {
 
     return (
         <ListGroup horizontal>
-            <ListGroupItem>
+            <ListGroupItem id="boxborder">
                 {generateRecipe.map((recipe, index) => {
                     return (
                         <div key={index} id="pages">

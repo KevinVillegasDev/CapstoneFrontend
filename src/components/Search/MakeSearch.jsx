@@ -63,6 +63,10 @@ const MakeSearch = () => {
 
     return (
         <div id="pages">
+            <h2>
+                After searching for a recipe, click on the image to display
+                cooking instructions/ingredients!
+            </h2>
             <SearchBar makeSearch={makeGetRequest} />
             <RecipePrinter showRecipeInstructions={recipeInstructions} />
             <DisplaySearch
