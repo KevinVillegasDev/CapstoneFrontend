@@ -7,6 +7,7 @@ const DisplaySearch = (props) => {
     };
 
     const handleLikedRecipeClick = (likeInfo) => {
+        console.log(likeInfo);
         props.likeRecipe(likeInfo);
     };
 
@@ -28,7 +29,9 @@ const DisplaySearch = (props) => {
                             <Button
                                 type="button"
                                 variant="primary"
-                                onClick={() => handleLikedRecipeClick(recipe)}
+                                onClick={() =>
+                                    handleLikedRecipeClick(recipe.id)
+                                }
                             >
                                 Favorite!
                             </Button>

@@ -36,30 +36,20 @@ const MakeSearch = () => {
         } catch (ex) {}
     };
 
-    const likeRecipe = async (likedRecipe) => {
-        let newRecipe = {
-            name: "",
-            instructions: "",
-        };
-        try {
-            let response = await axios.post(
-                `http://127.0.0.1:8000/recipes`,
-                newRecipe
-            );
-            console.log(response.data);
-        } catch (ex) {}
-        let savedRecipe = {
-            name: "",
-            recipeId: "",
+    const likeRecipe = async (likeInfo) => {
+        let likedRecipe = {
+            user: ,
+            recipeId: " ",
         };
         try {
             let response = await axios.post(
                 `http://127.0.0.1:8000/likedrecipes`,
-                savedRecipe
+                likedRecipe
             );
             console.log(response.data);
         } catch (ex) {}
     };
+        
 
     return (
         <div id="pages">

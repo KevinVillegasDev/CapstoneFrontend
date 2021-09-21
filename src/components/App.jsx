@@ -47,7 +47,7 @@ class App extends Component {
                                 }
                             }}
                         />
-                        <Route exact path="/" component={Home} />
+                        <Route exact path="/" component={Home} user={user} />
                         <Route path="/login" component={LoginPage} />
                         <Route path="/register" component={RegisterForm} />
                         <Route path="/search" component={MakeSearch} />

@@ -1,4 +1,4 @@
-const Home = (user) => {
+const Home = ({ user }) => {
     return (
         <div id="pages">
             <h1>Welcome to Recipes Galore. Use the NavBar to get started!</h1>
