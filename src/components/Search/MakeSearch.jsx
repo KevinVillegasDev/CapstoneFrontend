@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import DisplaySearch from "./DisplaySearch";
 import SearchBar from "./SearchBar";
 import RecipePrinter from "./RecipePrinter";
+// import jwtDecode from "jwt-decode";
 
 const MakeSearch = () => {
     const [searchResults, setSearchResults] = useState([]);
@@ -37,19 +38,31 @@ const MakeSearch = () => {
     };
 
     const likeRecipe = async (likeInfo) => {
-        let likedRecipe = {
-            user: ,
-            recipeId: " ",
+        let recipe = {
+            name: likeInfo,
+            instructions: "nothing",
         };
         try {
             let response = await axios.post(
-                `http://127.0.0.1:8000/likedrecipes`,
-                likedRecipe
+                "http://127.0.0.1:8000/recipes",
+                recipe
             );
             console.log(response.data);
         } catch (ex) {}
+
+        // let likedRecipe = {
+        //     name: likeInfo,
+        //     user: jwtDecode(localStorage.getItem("token")),
+        //     recipeId: ,
+        // };
+        // try {
+        //     let response = await axios.post(
+        //         `http://127.0.0.1:8000/likedrecipes`,
+        //         likedRecipe
+        //     );
+        //     console.log(response.data);
+        // } catch (ex) {}
     };
-        
 
     return (
         <div id="pages">

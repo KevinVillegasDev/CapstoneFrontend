@@ -30,7 +30,7 @@ const DisplaySearch = (props) => {
                                 type="button"
                                 variant="primary"
                                 onClick={() =>
-                                    handleLikedRecipeClick(recipe.id)
+                                    handleLikedRecipeClick(recipe.title)
                                 }
                             >
                                 Favorite!
