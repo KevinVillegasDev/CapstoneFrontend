@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import DisplaySearch from "./DisplaySearch";
-import SearchBar from "./SearchBar";
-import RecipePrinter from "./RecipePrinter";
+import DisplaySearch from "./DisplayProfileSearch";
+import SearchBar from "./ProfileSearchBar";
+import RecipePrinter from "./RecipePrinterProfile";
 // import jwtDecode from "jwt-decode";
 
 const MakeSearch = () => {
@@ -37,32 +37,17 @@ const MakeSearch = () => {
         } catch (ex) {}
     };
 
-    const likeRecipe = async (likeInfo) => {
-        let recipe = {
-            name: likeInfo,
-            instructions: "nothing",
-        };
-        try {
-            let response = await axios.post(
-                "http://127.0.0.1:8000/recipes",
-                recipe
-            );
-            console.log(response.data);
-        } catch (ex) {}
-    };
-
     return (
         <div id="pages">
             <h2>
-                After searching for a recipe, click on the image to display
-                cooking instructions/ingredients!
+                Above are your liked recipes. Enter your desired recipe in the
+                search bar to bring up detailed instructions!
             </h2>
             <SearchBar makeSearch={makeGetRequest} />
             <RecipePrinter showRecipeInstructions={recipeInstructions} />
             <DisplaySearch
                 displaySearch={searchResults}
                 getRecipeInstructions={getRecipeInstructions}
-                likeRecipe={likeRecipe}
             />
         </div>
     );

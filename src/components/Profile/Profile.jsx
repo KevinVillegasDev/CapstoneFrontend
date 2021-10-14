@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ListGroup, ListGroupItem } from "react-bootstrap";
+import MakeSearch from "./MakeProfileRecipeSearch";
 
 const Profile = () => {
     const [likedRecipes, setLikedRecipes] = useState([]);
@@ -18,11 +19,6 @@ const Profile = () => {
 
     return (
         <div id="pages">
-            <h3>
-                Below are your liked recipes. For more detailed instructions,
-                enter recipe name in the search tab!
-            </h3>
-
             <ListGroup horizontal id="boxborder">
                 <br></br>
 
@@ -37,6 +33,7 @@ const Profile = () => {
                     })}
                 </ListGroupItem>
             </ListGroup>
+            <MakeSearch />
         </div>
     );
 };
