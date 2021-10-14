@@ -20,7 +20,7 @@ const Profile = () => {
         <div id="pages">
             <h3>
                 Below are your liked recipes. For more detailed instructions,
-                enter recipe name in the Search tab!
+                enter recipe name in the search tab!
             </h3>
 
             <ListGroup horizontal id="boxborder">
