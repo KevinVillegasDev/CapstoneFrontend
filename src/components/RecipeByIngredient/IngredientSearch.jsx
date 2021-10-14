@@ -3,12 +3,14 @@ import useForm from "./UseForm";
 import { Button } from "react-bootstrap";
 import axios from "axios";
 import { ListGroup, ListGroupItem, Form } from "react-bootstrap";
+import RecipePrinter from "./RecipePrinter";
 
 const IngredientSearch = () => {
     const { values, handleChange, handleSubmit } = useForm(
         makeIngredientRequest
     );
     const [ingredientRecipes, setIngredientRecipes] = useState([]);
+    const [recipeInstructions, setRecipeInstructions] = useState("");
 
     useEffect(() => {
         makeIngredientRequest();
@@ -24,16 +26,31 @@ const IngredientSearch = () => {
         } catch (ex) {}
     }
 
+    const getRecipeInstructions = async (id) => {
+        try {
+            let response = await axios.get(
+                `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=d299386456af4cce8794dafca7cc4f14`
+            );
+            setRecipeInstructions(response.data[0].steps);
+            console.log(response.data[0].steps);
+        } catch (ex) {}
+    };
+
     const handleClick = () => {
         makeIngredientRequest();
     };
 
+    const handleInstructionClick = (id) => {
+        getRecipeInstructions(id);
+    };
+
     return (
-        <div>
+        <div id="pages">
             <h3>
                 Enter your pantry/fridge ingredients here and quickly find{" "}
                 <br></br>
-                recipes you can create with those ingredients.
+                recipes you can create with those ingredients. Click on the
+                <br></br> recipe photo to pull up instructions.
             </h3>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
@@ -85,6 +102,7 @@ const IngredientSearch = () => {
                 </Button>{" "}
             </Form>
             <br></br>
+            <RecipePrinter showRecipeInstructions={recipeInstructions} />
             <ListGroup horizontal id="boxborder">
                 <ListGroupItem>
                     {ingredientRecipes.map((recipe, index) => {
@@ -96,6 +114,9 @@ const IngredientSearch = () => {
                                     src={recipe.image}
                                     alt="img"
                                     id="imagesize"
+                                    onClick={() =>
+                                        handleInstructionClick(recipe.id)
+                                    }
                                 />{" "}
                                 <br></br>
                             </div>
