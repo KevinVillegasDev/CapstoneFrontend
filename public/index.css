@@ -37,7 +37,6 @@
 #navtabs {
     background-color: rgb(172, 76, 76);
     color: white;
-    font-weight: bold;
 }
 
 #navtabs:hover {
@@ -46,7 +45,7 @@
 }
 
 #root {
-    font-family: "Oswald", sans-serif;
+    font-family: "Copperplate", fantasy;
     font-size: 16px;
 }
 
