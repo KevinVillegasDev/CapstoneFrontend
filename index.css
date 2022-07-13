@@ -1,0 +1,54 @@
+#pages {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 30px;
+    margin-bottom: 5%;
+    font-size: 20px;
+    color: rgb(12, 12, 12);
+}
+
+#homelink {
+    text-decoration: none;
+    color: rgb(233, 233, 238);
+    font-size: 28px;
+}
+
+#navbar {
+    background-color: rgb(58, 120, 161);
+}
+
+#img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+#boxborder {
+    border: solid 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#ingredientDisplayWidth {
+    width: 40%;
+    height: auto;
+}
+
+#navtabs {
+    background-color: rgb(172, 76, 76);
+    color: white;
+}
+
+#navtabs:hover {
+    background-color: rgb(15, 15, 15);
+    box-shadow: 0 0 3px 4px black;
+}
+
+#root {
+    font-family: "Copperplate", fantasy;
+    font-size: 16px;
+}
+
+#imagesize {
+    width: 580px;
+}
